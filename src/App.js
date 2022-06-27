@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./scss/index.scss";
-// import Categories from "./components/Categories";
+import Categories from "./components/Categories";
 // import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-// import Services from "./components/Services";
+import Services from "./components/Services";
 // import Recomended from "./components/Recomended";
 // import Choose from "./components/Choose";
 // import Products from "./components/Products";
@@ -18,8 +18,10 @@ const App = () => {
       {/* <ScrollToTop /> */}
       <Navbar />
       <Home />
-      {/* <Services />
+      <Services />
       <Categories />
+      {/* 
+      
       <Recomended />
       <Choose />
       <Products />

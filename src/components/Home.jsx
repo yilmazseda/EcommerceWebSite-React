@@ -1,6 +1,8 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
-import home from "../assets/home.png";
+// import home from "../assets/home.png";
+import { Images } from "../utilies/images";
+
 const Home = () => {
   return (
     <div className="home">
@@ -15,7 +17,7 @@ const Home = () => {
           </div>
         </div>
         <div className="extra-image">
-          <img src={home} alt="Home" />
+          <img src={Images.home} alt="Home" />
         </div>
       </div>{" "}
     </div>
