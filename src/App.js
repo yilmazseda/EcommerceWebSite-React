@@ -1,34 +1,67 @@
-import React, { useState } from "react";
-import "./scss/index.scss";
-import Categories from "./components/Categories";
-// import ScrollToTop from "./components/ScrollToTop";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
+import Choose from "./components/Choose";
 import Home from "./components/Home";
+import "./scss/index.scss";
 import Services from "./components/Services";
-// import Recomended from "./components/Recomended";
-// import Choose from "./components/Choose";
-// import Products from "./components/Products";
-// import Promo from "./components/Promo";
-// import Footer from "./components/Footer";
+import Categories from "./components/Categories";
+import Recomended from "./components/Recomended";
+import Products from "./components/Products";
+import Promo from "./components/Promo";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
+import scrollreveal from "scrollreveal";
 
-const App = () => {
+function App() {
   const [theme, setTheme] = useState("dark");
+  const changeTheme = () => {
+    theme === "dark" ? setTheme("light") : setTheme("dark");
+  };
+  useEffect(() => {
+    const registerAnimations = () => {
+      const sr = scrollreveal({
+        origin: "bottom",
+        distance: "80px",
+        duration: 1000,
+        reset: false,
+      });
+      sr.reveal(
+        `
+        nav,
+        .home,
+        .services-container,
+        .categories-container,
+        .recommend-container,
+        .choose-us-container,
+        .products-container,
+        .promo-container,
+        footer
+    `,
+        {
+          interval: 500,
+        }
+      );
+    };
+    registerAnimations();
+  }, []);
+  window.setTimeout(() => {
+    const home = document.getElementsByClassName("home");
+    home[0].style.transform = "none";
+  }, 1500);
   return (
-    <div className="app">
-      {/* <ScrollToTop /> */}
-      <Navbar />
+    <div data-theme={theme} className="app">
+      <ScrollToTop />
+      <Navbar changeTheme={changeTheme} currentTheme={theme} />
       <Home />
       <Services />
       <Categories />
-      {/* 
-      
       <Recomended />
       <Choose />
       <Products />
       <Promo />
-      <Footer />   */}
+      <Footer />
     </div>
   );
-};
+}
 
 export default App;

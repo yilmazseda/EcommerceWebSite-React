@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 
-const MostSold = () => {
-  return <div>App</div>;
-};
+// const MostSold = () => {
+//   return <div>App</div>;
+// };
 
-export default MostSold;
+// export default MostSold;

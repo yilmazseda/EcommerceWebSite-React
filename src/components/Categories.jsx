@@ -54,7 +54,7 @@ const Categories = () => {
           {categories.map(({ image, title, description }, index) => {
             return (
               <div className="category" key={index}>
-                <img src={image} alt="category" />
+                <img src={image} alt="Category" />
                 <h4>{title}</h4>
                 <p>{description}</p>
               </div>
